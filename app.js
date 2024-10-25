@@ -1,12 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const pokemonRoutes = require('./routes/pokemonRoutes');
+const path = require('path');
 
 const app = express();
 app.set('view engine', 'ejs');
-app.sey('views', './views');
+app.set('views', './views');
 app.use(bodyParser.urlencoded({extended: true}));
-app.iuse(express.static('public'));
+app.use(express.static('public'));
 
 app.use('/', pokemonRoutes);
 
